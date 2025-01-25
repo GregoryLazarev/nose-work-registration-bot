@@ -1,46 +1,16 @@
-# nose-work-app
+# NoseWork Competition Telegram Bot
 
-## Overview
+This Telegram bot is designed to simplify the registration process for NoseWork competitions and keep participants informed about upcoming events. Built with Python, the bot leverages the `aiogram` library for seamless interaction with Telegram's API and uses PostgreSQL as its database for reliable data management.
 
-This project is a Django-based application designed to manage registrations and provide information for participants in NoseWork competitions. The system aims to streamline the entire process of managing a NoseWork competition, from participant registration to event announcements and result tracking.
+## Key Features
 
-## Features
+- **Competition Registration:** Users can easily register for NoseWork competitions directly through the bot.
+- **Event Notifications:** Participants receive timely notifications about upcoming competitions and important updates.
+- **User-Friendly Interface:** Intuitive commands and interactions make the bot easy to use for participants, organizers, and judges.
+- **Database Integration:** PostgreSQL ensures secure and efficient storage of user data, competition details, and registrations.
 
-User Registration and Authentication: Secure user registration and login functionality for participants, organizers, and judges.
-Participant Management: Easy registration process for participants, with personal dashboards to track competition status.
-Event Information: Comprehensive event details, including schedules, locations, and rules.
-Notifications: Automated notifications to keep participants informed about important updates and changes.
-Result Tracking: Real-time tracking of competition results and rankings.
-Admin Panel: A robust admin interface for managing competitions, participants, and results.
+## Technologies Used
 
-## Installation
-
-Under construction
-
-## Contributing
-
-We welcome contributions to improve the NoseWork Competition Management System! To contribute:
-
-1. Fork the repository.
-2. Create a new branch:
-```sh
-git checkout -b feature/YourFeatureName
-```
-3. Make your changes.
-4. Commit your changes:
-```sh
-git commit -m 'Add some feature'
-```
-5. Push to the branch:
-```sh
-git push origin feature/YourFeatureName
-```
-6. Open a pull request.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](https://github.com/git/git-scm.com/blob/main/MIT-LICENSE.txt) file for details.
-
-## Contact
-
-For any inquiries or support, please contact lazarev.grisha@gmail.com
+- **Python:** The core programming language for the bot's logic.
+- **Aiogram:** A powerful library for building Telegram bots with asynchronous capabilities.
+- **PostgreSQL:** A robust relational database for managing user and competition data.
