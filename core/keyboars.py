@@ -5,7 +5,7 @@ from aiogram.types import (
     InlineKeyboardButton,
 )
 
-from constants import (
+from core.constants import (
     REGISTER_HANDLER_CALLBACK_DATA,
     REGISTER_K9_CALLBACK_DATA,
 )

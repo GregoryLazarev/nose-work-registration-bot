@@ -2,11 +2,11 @@ import json
 import os
 from typing import Any
 
-from aiogram import Bot, Dispatcher, types
+from aiogram import Bot, Dispatcher
 from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
 
-from handlers import (
+from core.handlers import (
     default_handler_router,
     register_handler_router,
 )
