@@ -14,8 +14,9 @@ jobs:
 
       - name: Install Harbor CA certificate
         run: |
+          echo "${{ secrets.HARBOR_CERT }}" | base64 --decode > harbor.crt
           sudo mkdir -p /usr/local/share/ca-certificates
-          sudo cp .certs/harbor.crt /usr/local/share/ca-certificates/harbor.crt
+          sudo cp harbor.crt /usr/local/share/ca-certificates/harbor.crt
           sudo update-ca-certificates
 
       - name: Login to Harbor
