@@ -1,0 +1,54 @@
+name: Docker Build and Push
+
+on:
+  push:
+#    branches:
+#      - master  # Запускать сборку при пуше в ветку main
+#    tags:
+#      - 'v*'  # Запускать сборку при создании тега, начинающегося с 'v'
+
+jobs:
+  build-and-push:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+#      - name: Form Image Tag name
+#        id: form_image_tag
+#        uses: haya14busa/action-cond@v1
+#        with:
+#          cond: ${{ github.event_name == 'pull_request' }}
+#          if_true: pr-${{ github.event.pull_request.number }}-github-actions-${{ github.run_number }}
+#          if_false: ${{ github.ref_name }}-github-actions-${{ github.run_number }}
+
+      - name: Build and push image
+        id: build_and_push_image
+#        env:
+#          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+#          ECR_REPOSITORY: dsas
+#          IMAGE_TAG: ${{ steps.form_image_tag.outputs.value }}
+        run: |
+          IMAGE_TAG=${{ github.ref_name }}-github-actions-${{ github.run_number }}
+#          docker build --tag $DSAS_IMAGE --build-arg PYTHON_IMAGE=harbor.tools.improvado.io/hub-cache/library/$IMAGE_TAG .
+#          docker push "$DSAS_IMAGE"
+#          echo "image_name=${DSAS_IMAGE}" >> "$GITHUB_OUTPUT"
+          echo "image_name=${IMAGE_TAG}" >> "$GITHUB_OUTPUT"
+
+#      - name: Log in to Harbor
+#        uses: docker/login-action@v2
+#        with:
+#          username: ${{ secrets.HARBOR_USERNAME }}
+#          password: ${{ secrets.HARBOR_TOKEN }}
+#
+#      - name: Build Docker image
+#        run: docker build -t nw-tg-bot:latest .
+#
+#      # Шаг 4: Пуш Docker-образа в Docker Hub
+#      - name: Push Docker image
+#        run: |
+#          docker tag ${{ secrets.DOCKER_HUB_USERNAME }}/nosework-bot:latest ${{ secrets.DOCKER_HUB_USERNAME }}/nosework-bot:${{ github.sha }}
+#          docker push ${{ secrets.DOCKER_HUB_USERNAME }}/nosework-bot:latest
+#          docker push ${{ secrets.DOCKER_HUB_USERNAME }}/nosework-bot:${{ github.sha }}
+#          docker rmi nw-tg-bot:latest

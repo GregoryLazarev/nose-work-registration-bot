@@ -1,12 +1,10 @@
 import structlog
 from aiogram import Router, F
 from aiogram.types import Message, CallbackQuery
-from aiogram.filters import CommandStart, Command
-from aiogram.fsm.state import State, StatesGroup
 from aiogram.fsm.context import FSMContext
 
 
-from constants import REGISTER_HANDLER_CALLBACK_DATA
+from core.constants import REGISTER_HANDLER_CALLBACK_DATA
 
 
 logger = structlog.getLogger(__file__)

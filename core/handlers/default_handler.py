@@ -3,7 +3,7 @@ from aiogram import Router, F
 from aiogram.types import Message, CallbackQuery
 from aiogram.filters import CommandStart, Command
 
-from constants import WELCOME_MESSAGE
+from core.constants import WELCOME_MESSAGE
 import keyboards as kb
 
 
