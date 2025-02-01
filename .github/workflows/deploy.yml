@@ -13,4 +13,4 @@ jobs:
         id: build_and_push_image
         run: |
           IMAGE_TAG=${{ github.ref_name }}-github-actions-${{ github.run_number }}
-          echo "image_name=${IMAGE_TAG}" >> "$GITHUB_OUTPUT"
+          echo "image_name=${IMAGE_TAG}" >> "GITHUB_STEP_SUMMARY"
