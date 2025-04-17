@@ -12,13 +12,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Install Harbor CA certificate
-        run: |
-          echo "${{ secrets.HARBOR_CERT }}" | base64 --decode > harbor.crt
-          sudo mkdir -p /usr/local/share/ca-certificates
-          sudo cp harbor.crt /usr/local/share/ca-certificates/harbor.crt
-          sudo update-ca-certificates
-
       - name: Login to Harbor
         uses: docker/login-action@v3
         with:
